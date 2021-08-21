@@ -1,3 +1,16 @@
+.border_r_16 {
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.posi_rel {
+    position: relative;
+}
+
+.border_r_20 {
+    border-radius: 20rpx;
+    overflow: hidden;
+}
 
 .safe_status_bar {
     width: 100%;
@@ -15,27 +28,33 @@
     flex-direction: row;
 }
 
+.flex_c_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .flex_col {
     display: flex;
     flex-direction: column;
 }
 
 .flex_cc {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .flex_b_row {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .flex_a_row {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -43,21 +62,17 @@
     flex-wrap: wrap;
 }
 
-@mixin fnfont(
-    $family: 'PingFangSC-Regular',
-    $size: 28rpx,
-    $color: #ffffff,
-    $weight: 500
-) {
+@mixin fnfont( $family: 'PingFangSC-Regular', $size: 28rpx, $color: #ffffff, $weight: 500) {
     font-family: $family;
     font-size: $size;
     color: $color;
-
     @if str-index($family, 'Medium') {
         font-weight: 600;
-    } @else if $weight>500 {
+    }
+    @else if $weight>500 {
         font-weight: $weight;
-    } @else if $weight==bold {
+    }
+    @else if $weight==bold {
         font-weight: 600;
     }
 }

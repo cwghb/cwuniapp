@@ -4,8 +4,29 @@
             "path" : "pages/home/home",
             "style" :                                                                                    
             {
-                // "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"titleColor":"#0077AA",
+						"titleSize":"14px",
+						"searchInput": {
+							"align":"left",
+							"backgroundColor": "#fff",
+							"borderRadius": "40rpx", //输入框圆角
+							"placeholder": "请输入搜索内容",
+							"placeholderColor":"#999",
+							"disabled": true //disable时点击输入框不置焦，可以跳到新页面搜索
+						},
+						"buttons":[
+							{
+								"float":"right",
+								"fontSize": "30rpx",
+								"text": "签到" //原生标题栏增加分享按钮，点击事件可通过页面的 onNavigationBarButtonTap 函数进行监听
+							}
+						]
+					}
+				}
             }
             
         }
@@ -33,12 +54,21 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
+        ,{
+            "path" : "pages/home/components/cc-swiper/cc-swiper",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#f3f3f3",
-		"backgroundColor": "red"
+		"backgroundColor": "#f30000"
 	},
 	"tabBar": {
 		"color": "#999999",
