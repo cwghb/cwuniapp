@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2759517 */
+  src: 
+  /* url('iconfont.woff2?t=16295093955/* 07') format('woff2'),
+       url('iconfont.woff?t=1629509395507') format('woff'), */
+       url('@/common/iconfont.ttf?t=1629509395507') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wo:before {
+  content: "\e636";
+}
+
+.icon-home:before {
+  content: "\e616";
+}
+
+.icon-danseshixintubiao-:before {
+  content: "\e630";
+}
+
+.icon-icon_huabanfuben:before {
+  content: "\e637";
+}
+
+.icon-kebiao:before {
+  content: "\e632";
+}
+
+.icon-kebiao2:before {
+  content: "\e7fd";
+}
+
