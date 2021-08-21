@@ -2,7 +2,7 @@
  * @Author: chenwei
  * @Date: 2021-08-21 13:11:31
  * @Last Modified by: chenwei
- * @Last Modified time: 2021-08-21 13:48:04
+ * @Last Modified time: 2021-08-21 17:09:35
  swiper组件
  */
 <template>
@@ -50,7 +50,6 @@ export default {
     width: 20rpx;
     height: 20rpx;
     border-radius: 10rpx;
-    background-color: violet;
     margin-right: 10rpx;
 }
 .v_sel_dot {

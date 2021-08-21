@@ -23,6 +23,10 @@
     padding-bottom: env(safe-area-inset-bottom);
 }
 
+.flex_1 {
+    flex: 1;
+}
+
 .flex_row {
     display: flex;
     flex-direction: row;
@@ -39,6 +43,12 @@
     flex-direction: column;
 }
 
+.flex_c_col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .flex_cc {
     display: flex;
     flex-direction: column;
@@ -46,13 +56,14 @@
     align-items: center;
 }
 
-.flex_b_row {
+.flex_sb_row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-.flex_a_row {
+.flex_sa_row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -63,6 +74,9 @@
 }
 
 @mixin fnfont( $family: 'PingFangSC-Regular', $size: 28rpx, $color: #ffffff, $weight: 500) {
+    @if str-length($family)==0 {
+        font-family: 'PingFangSC-Regular';
+    }
     font-family: $family;
     font-size: $size;
     color: $color;
@@ -75,4 +89,8 @@
     @else if $weight==bold {
         font-weight: 600;
     }
+}
+
+.main_bg_color {
+    background-color: #f3f3f3;
 }

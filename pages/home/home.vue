@@ -1,26 +1,14 @@
 <template>
-    <view>
-        <!-- #ifdef MP -->
-        <!-- <view class='v_nav'>导航栏</view> -->
-        <!-- #endif -->
-
-        <!-- <view class='v_wrap_top_swiper'>
-            <ccSwiper :dataArr="swipArr"></ccSwiper>
-        </view>
-
-        <view class=''>home</view> -->
-
+    <view class="main_bg_color">
         <u-tabs-swiper ref="uTabs" :list="list" :current="current" @change="tabsChange" :is-scroll="false" height="80" active-color="#333333" font-size="30" bg-color="#f3f3f3" inactive-color="#999999" swiperWidth="750" bar-width="40" bar-height="4"></u-tabs-swiper>
 
         <swiper :current="swiperCurrent" @transition="transition" class="v_wrap_swip" @animationfinish="animationfinish">
             <swiper-item class="swiper-item">
-                <homeJx class="v_wrap_swip" />
+                <homeJx :dataArr="swipArr" class="v_wrap_swip" />
             </swiper-item>
 
             <swiper-item class="swiper-item">
-                <scroll-view scroll-y style="height: 100%; width: 100%;" scroll-with-animation="true">
-                    <view class='v_' v-for="i in 30" :key="i">i={{i}}</view>
-                </scroll-view>
+                <homeYx class="v_wrap_swip" />
             </swiper-item>
 
             <swiper-item class="swiper-item">
@@ -42,45 +30,30 @@
 <script>
 import ccSwiper from './components/cc-swiper/cc-swiper.vue'
 import homeJx from './components/home-jx/home-jx.vue'
+import homeYx from './components/home-yx/home-yx.vue'
 // import uBadge from '../../uview-ui/components/u-badge/u-badge.vue'
 import uTabsSwiper from '../../uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue'
 export default {
     data() {
         return {
             swipArr: [
-                {
-                    src: "/static/image/swiper_0.png",
-                    title: "汉服设计上线了"
-                },
-                {
-                    src: "/static/image/swiper_1.png",
-                    title: "汉服设计上线了"
-                },
-                {
-                    src: "/static/image/swiper_2.png",
-                    title: "汉服设计上线了"
-                }
+                { src: "/static/image/swiper_0.png", title: "汉服设计上线了" },
+                { src: "/static/image/swiper_1.png", title: "汉服设计上线了" },
+                { src: "/static/image/swiper_2.png", title: "汉服设计上线了" }
             ],
-            list: [{
-                name: '精选'
-            }, {
-                name: '游戏动漫'
-            }, {
-                name: '美术'
-            }, {
-                name: '视觉设计'
-            }, {
-                name: '播音主持'
-            }, {
-                name: '音乐'
-            }],
+            list: [
+                { name: '精选' },
+                { name: '游戏动漫' },
+                { name: '美术' },
+                { name: '视觉设计' },
+                { name: '播音主持' },
+                { name: '音乐' }
+            ],
             // 因为内部的滑动机制限制，请将tabs组件和swiper组件的current用不同变量赋值
             current: 0, // tabs组件的current值，表示当前活动的tab选项
             swiperCurrent: 0,
             toidx: '',
             toRightIdx: '',
-
-
         };
     },
 
@@ -88,7 +61,7 @@ export default {
         ccSwiper,
         uTabsSwiper,
         homeJx,
-        // uBadge
+        homeYx,
     },
 
     methods: {
@@ -126,12 +99,6 @@ export default {
 .v_nav {
     height: 88rpx;
 }
-.v_wrap_top_swiper {
-    margin-left: 20rpx;
-    margin-right: 20rpx;
-    height: 300rpx;
-}
-
 .v_wrap_swip {
     height: calc(100vh - 130px);
 }
