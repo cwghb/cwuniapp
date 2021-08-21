@@ -42,7 +42,7 @@
                 </scroll-view>
             </view>
 
-            <view class=''>home</view>
+            <view v-for="i in 10" class=''>home-{{i}}</view>
         </scroll-view>
     </view>
 </template>
