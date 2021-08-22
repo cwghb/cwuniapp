@@ -95,7 +95,9 @@ $margin_w: 24rpx;
     @include fnfont("", 26rpx, #666666);
 }
 .v_box {
-    margin: $margin_w;
+    margin-left: $margin_w;
+	margin-right: $margin_w;
+	margin-bottom: $margin_w;
     border-radius: 20rpx;
     background-color: #ffffff;
     padding-top: 24rpx;
