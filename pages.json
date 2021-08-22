@@ -39,7 +39,8 @@
             "path": "pages/my/my",
             "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				 "backgroundColor": "#f3f300"
             }
 
         },
@@ -79,7 +80,7 @@
         "navigationBarTextStyle": "black",
         "navigationBarTitleText": "uni-app",
         "navigationBarBackgroundColor": "#f3f3f3",
-        "backgroundColor": "#f30000"
+        "backgroundColor": "#f3f3f3"
     },
     "tabBar": {
         "color": "#999999",

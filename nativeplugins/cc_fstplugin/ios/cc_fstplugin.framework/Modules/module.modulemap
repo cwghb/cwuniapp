@@ -1,0 +1,6 @@
+framework module cc_fstplugin {
+  umbrella header "cc-fstplugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

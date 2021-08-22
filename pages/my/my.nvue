@@ -1,0 +1,71 @@
+<template>
+	<view>
+		<text>wo</text>
+		<button type="primary" @click="testAdd">testAdd插件</button>
+        <cc-fstcomp ref="testRef" class="test_comp" />
+        <view class='v_set' @click="testClick">设置值</view>
+	</view>
+</template>
+
+<script>
+	const testModule = uni.requireNativePlugin("cc-fstplugin")
+	export default {
+		data() {
+			return { };
+		},
+		methods: {
+            testAdd() {
+                testModule.testAdd({
+                    'name': 'uni-app',
+                    'age': 1
+                }, (ret) => {
+                        console.log('--ret-=' + JSON.stringify(ret));
+                        uni.showToast({
+                            title: '调用异步方法ok' + ret.result,
+                            icon: "none"
+                        })
+                    }
+                )
+            },
+
+            testClick() {
+                this.$refs.testRef.setText({ 'text': 'Hello' });
+            }
+        }
+	}
+</script>
+
+<style scoped>
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text-area {
+    display: flex;
+    justify-content: center;
+}
+.title {
+    font-size: 36rpx;
+    color: #8f8f94;
+}
+.test_comp {
+    margin-top: 100rpx;
+    width: 300rpx;
+    height: 100rpx;
+    background-color: #888888;
+    border-style: solid;
+    border-width: 10rpx;
+    border-color: #4cd964;
+}
+.v_set {
+    margin-top: 10rpx;
+    width: 300rpx;
+    height: 100rpx;
+    background-color: #888888;
+    border-style: solid;
+    border-width: 10rpx;
+    border-color: #ff0000;
+}
+</style>

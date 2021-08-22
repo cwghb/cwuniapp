@@ -1,0 +1,22 @@
+{
+    "name": "cc_fstplugin",
+    "id": "cc_fstplugin",
+    "version": "1.0.0",
+    "description": "cc制作的第一个原生插件",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "ios": {
+            "plugins": [{
+                "type": "module",
+                "name": "cc-fstplugin",
+                "class": "CCTestPlugin"
+            }, {
+                "type": "component",
+                "name": "cc-fstcomp",
+                "class": "CCTestComp"
+            }],
+            "integrateType": "framework",
+            "deploymentTarget": "9.0"
+        }
+    }
+}
