@@ -7,6 +7,10 @@
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
+        "safearea":{
+            "background":"#fff",
+            "bottom":{ "offset":"none" }
+        },
         "usingComponents" : true,
         "nvueStyleCompiler" : "uni-app",
         "compilerVersion" : 3,

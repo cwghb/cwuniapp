@@ -1,0 +1,159 @@
+<template>
+	<!-- #ifdef APP-PLUS -->
+
+	<view class='v_root'>
+		<scroll-view id="tab-bar" class="scroll_h" :scroll-x="true" :show-scrollbar="false">
+			<view v-for="(tab,index) in tabBars" :key="tab.id" class="v_item_tab" :id="tab.id" :data-current="index"
+				@click="ontabtap">
+				<text :class="['txt_tab',tabIndex==index?'txt_sel_tab':'txt_unsel_tab']">{{tab.name}}</text>
+			</view>
+		</scroll-view>
+
+		<swiper :current="tabIndex" style="flex: 1;" @change="ontabchange">
+			<swiper-item>
+				<!-- #ifdef APP-NVUE -->
+				<list style="flex: 1;" class="v_list" show-scrollbar=false  >
+					<header class='v_head'>
+						<view class='v_'>第一个header</view>
+					</header>
+					<cell v-for="i in 20" :key="i">
+						<view class='v_'>
+							<text>cell-i={{i}}</text>
+						</view>
+					</cell>
+					<header class='v_head'>
+						<view class='v_'>第2个header</view>
+					</header>
+					<cell v-for="i in 40" :key="i">
+						<view class='v_'>
+							<text>cell-i={{i}}</text>
+						</view>
+					</cell>
+				</list>
+				<!-- #endif -->
+
+			</swiper-item>
+
+			<swiper-item>
+				<view class='v_'>{{tabBars[tabIndex].name}}</view>
+			</swiper-item>
+
+			<swiper-item>
+				<view class='v_'>{{tabBars[tabIndex].name}}</view>
+			</swiper-item>
+		</swiper>
+
+	</view>
+
+
+	<!-- <list style="flex: 1;" class="v_list" show-scrollbar=false pagingEnabled=true>
+		<header class='v_head'>
+			<view class='v_'>第一个header</view>
+		</header>
+	    <cell v-for="i in 20" :key="i">
+	        <view class='v_'>
+				<text>cell-i={{i}}</text>
+	        </view>
+	    </cell>
+		<header class='v_head'>
+			<view class='v_'>第2个header</view>
+		</header>
+		<cell v-for="i in 20" :key="i">
+		    <view class='v_'>
+				<text>cell-i={{i}}</text>
+		    </view>
+		</cell>
+	  </list> -->
+	<!-- #endif -->
+
+	<!-- #ifndef APP-PLUS -->
+	<view class='v_'>非APP-PLUS</view>
+	<!-- #endif -->
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				tabIndex: 0,
+				tabBars: [{
+					name: '关注',
+					id: 'guanzhu'
+				}, {
+					name: '推荐',
+					id: 'tuijian'
+				}, {
+					name: '体育',
+					id: 'tiyu'
+				}],
+				imageList: [{
+						src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'
+					},
+					{
+						src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'
+					},
+					{
+						src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'
+					}
+				]
+			}
+		},
+		methods: {
+			ontabchange(e) {
+				let index = e.target.current || e.detail.current;
+				this.tabIndex = index;
+			},
+
+		}
+	}
+</script>
+
+<style scoped>
+	.v_root {
+		flex: 1;
+		flex-direction: column;
+		overflow: hidden;
+		background-color: #f3f3f3;
+	}
+
+	.v_list {
+		background-color: #f3f3f3;
+	}
+
+	.v_head {
+		height: 100rpx;
+		background-color: #007AFF;
+	}
+
+	.image {
+		width: 700rpx;
+		height: 300rpx;
+	}
+
+	.scroll_h {
+		width: 750rpx;
+		flex-direction: row;
+		white-space: nowrap;
+		background-color: green;
+	}
+
+	.v_item_tab {
+		padding-left: 40rpx;
+		padding-right: 40rpx;
+		height: 100rpx;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.txt_tab {
+		font-size: 38rpx;
+	}
+
+	.txt_sel_tab {
+		color: #333333;
+	}
+
+	.txt_unsel_tab {
+		color: #888888;
+	}
+</style>
